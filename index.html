@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geeta Collections - Elegance in Every Thread</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-180deg) scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        @keyframes flipIn {
+            from {
+                opacity: 0;
+                transform: rotateY(-90deg);
+            }
+            to {
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+        }
+
+        /* Animation Classes - These will be applied dynamically */
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-fadeInLeft {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-fadeInRight {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+
+        .animate-fadeInDown {
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        .animate-scaleIn {
+            animation: scaleIn 0.6s ease-out forwards;
+        }
+
+        .animate-rotateIn {
+            animation: rotateIn 1s ease-out forwards;
+        }
+
+        .animate-zoomIn {
+            animation: zoomIn 0.6s ease-out forwards;
+        }
+
+        .animate-slideInFromTop {
+            animation: slideInFromTop 0.8s ease-out forwards;
+        }
+
+        .animate-slideInFromBottom {
+            animation: slideInFromBottom 0.8s ease-out forwards;
+        }
+
+        .animate-flipIn {
+            animation: flipIn 0.8s ease-out forwards;
+        }
+
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Initially hidden for animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FFF8F0 0%, #FEF3E2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 20px 15px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            border: 2px solid #F4A460;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #D2691E;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: float 3s ease-in-out infinite reverse;
+        }
+
+        .decorative-circle {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            width: 30px;
+            height: 30px;
+            border: 2px solid #F4A460;
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: rotateIn 2s ease-out, float 5s ease-in-out infinite 2s;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            color: #8B4513;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(45deg, #8B4513, #D2691E, #F4A460);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .hero-content .tagline {
+            font-size: clamp(1.1rem, 4vw, 1.5rem);
+            color: #A0522D;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .hero-content .description {
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            color: #8B4513;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: inline-block;
+            min-width: 140px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #8B4513, #A0522D);
+            color: white;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #A0522D, #D2691E);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: linear-gradient(45deg, #128C7E, #25D366);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background: white;
+            position: relative;
+        }
+
+        .products::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #F4A460, transparent);
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 15px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            color: #8B4513;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #F4A460, #D2691E);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            color: #A0522D;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 3rem;
+            padding: 0 15px;
+        }
+
+        .product-card {
+            background: #FFF8F0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(244, 164, 96, 0.1), rgba(210, 105, 30, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, #F4A460, #D2691E);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23pattern)"/></svg>');
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .product-image::after {
+            content: '✨';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .product-info {
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-info h3 {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            color: #8B4513;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .product-card:hover .product-info h3 {
+            color: #D2691E;
+        }
+
+        .product-info .category {
+            color: #A0522D;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            position: relative;
+        }
+
+        .product-info .category::before {
+            content: '🏷️';
+            margin-right: 5px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #FFF8F0 0%, #FEF3E2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(244, 164, 96, 0.1) 0%, transparent 70%);
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-content h2 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            color: #8B4513;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .about-content h2::before {
+            content: '👑';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        .about-content p {
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            color: #8B4513;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            transition: transform 0.3s ease;
+        }
+
+        .about-content p:hover {
+            transform: translateX(5px);
+        }
+
+        .about-content .highlight {
+            font-weight: 600;
+            color: #A0522D;
+            font-size: clamp(1rem, 3.5vw, 1.2rem);
+            position: relative;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            border-left: 4px solid #F4A460;
+        }
+
+        .store-info {
+            background: rgba(255,255,255,0.8);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(244, 164, 96, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .store-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .store-info h3 {
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
+            color: #8B4513;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .store-info h3::before {
+            content: '🏪';
+            margin-right: 10px;
+        }
+
+        .store-info p {
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #F4A460, #D2691E, #F4A460);
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        .footer-content {
+            padding: 0 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer h3 {
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .footer .tagline {
+            color: #F4A460;
+            margin-bottom: 2rem;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            font-style: italic;
+        }
+
+        .footer-info {
+            border-top: 1px solid rgba(244, 164, 96, 0.3);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-info p {
+            color: #F4A460;
+            margin-bottom: 10px;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            transition: color 0.3s ease;
+        }
+
+        .footer-info p:hover {
+            color: white;
+        }
+
+        .designer-credit {
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            color: #F4A460;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(244, 164, 96, 0.3);
+            position: relative;
+        }
+
+        .designer-credit::before {
+            content: '💻';
+            margin-right: 5px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            border: none;
+            font-size: 28px;
+        }
+
+        .whatsapp-float:hover {
+            background: linear-gradient(45deg, #128C7E, #25D366);
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .whatsapp-float:hover::before {
+            opacity: 0.3;
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #F4A460, #D2691E);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #FFF8F0 0%, #FEF3E2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #F4A460;
+            border-top: 4px solid #8B4513;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Mobile Specific Styles */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 90vh;
+                padding: 40px 15px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                padding: 16px 20px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .product-image {
+                height: 250px;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 24px;
+            }
+            
+            .store-info {
+                padding: 25px;
+                margin: 0 15px;
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            .hero {
+                padding: 30px 10px;
+            }
+            
+            .products-grid {
+                padding: 0 10px;
+            }
+            
+            .section-title {
+                padding: 0 10px;
+            }
+            
+            .about-content {
+                padding: 0 10px;
+            }
+            
+            .footer-content {
+                padding: 0 10px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Touch-friendly interactions */
+        @media (hover: none) and (pointer: coarse) {
+            .product-card:hover {
+                transform: none;
+            }
+            
+            .btn:hover {
+                transform: none;
+            }
+            
+            .whatsapp-float:hover {
+                transform: none;
+            }
+        }
+
+        /* Particle Animation */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #F4A460;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: particleFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="decorative-circle"></div>
+        <div class="hero-content">
+            <h1 class="font-playfair animate-slideInFromTop">Geeta Collections</h1>
+            <p class="tagline animate-fadeInUp animate-delay-1">Elegance in Every Thread</p>
+            <p class="description animate-fadeInUp animate-delay-2">
+                Discover timeless fashion that blends traditional craftsmanship with contemporary style. 
+                Located in the heart of Mulund, we bring you the finest in ethnic wear.
+            </p>
+            <div class="hero-buttons animate-fadeInUp animate-delay-3">
+                <a href="#products" class="btn btn-primary animate-bounce">👉 Explore Collection</a>
+                <a href="#" class="btn btn-whatsapp animate-bounce animate-delay-1" onclick="openWhatsApp()">👉 WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-title animate-on-scroll" data-animation="fadeInDown">
+                <h2 class="font-playfair">Our Collection</h2>
+                <p>From elegant kurtas to stunning ethnic sets, discover pieces that celebrate your unique style and heritage.</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card animate-on-scroll" data-animation="fadeInLeft">
+                    <div class="product-image">Classic Men's Kurta</div>
+                    <div class="product-info">
+                        <h3>Classic Men's Kurta</h3>
+                        <p class="category">Men's Wear</p>
+                    </div>
+                </div>
+                
+                <div class="product-card animate-on-scroll" data-animation="fadeInUp">
+                    <div class="product-image">Elegant Women's Kurti</div>
+                    <div class="product-info">
+                        <h3>Elegant Women's Kurti</h3>
+                        <p class="category">Women's Wear</p>
+                    </div>
+                </div>
+                
+                <div class="product-card animate-on-scroll" data-animation="fadeInRight">
+                    <div class="product-image">Traditional Ethnic Set</div>
+                    <div class="product-info">
+                        <h3>Traditional Ethnic Set</h3>
+                        <p class="category">Ethnic Wear</p>
+                    </div>
+                </div>
+                
+                <div class="product-card animate-on-scroll" data-animation="scaleIn">
+                    <div class="product-image">Designer Men's Kurta</div>
+                    <div class="product-info">
+                        <h3>Designer Men's Kurta</h3>
+                        <p class="category">Men's Wear</p>
+                    </div>
+                </div>
+                
+                <div class="product-card animate-on-scroll" data-animation="rotateIn">
+                    <div class="product-image">Festive Women's Kurti</div>
+                    <div class="product-info">
+                        <h3>Festive Women's Kurti</h3>
+                        <p class="category">Women's Wear</p>
+                    </div>
+                </div>
+                
+                <div class="product-card animate-on-scroll" data-animation="zoomIn">
+                    <div class="product-image">Premium Ethnic Wear</div>
+                    <div class="product-info">
+                        <h3>Premium Ethnic Wear</h3>
+                        <p class="category">Ethnic Wear</p>
+                    </div>
+                </div>
+                
+                <div class="product-card animate-on-scroll" data-animation="flipIn">
+                    <div class="product-image">Casual Men's Kurta</div>
+                    <div class="product-info">
+                        <h3>Casual Men's Kurta</h3>
+                        <p class="category">Men's Wear</p>
+                    </div>
+                </div>
+                
+                <div class="product-card animate-on-scroll" data-animation="slideInFromBottom">
+                    <div class="product-image">Stylish Women's Kurti</div>
+                    <div class="product-info">
+                        <h3>Stylish Women's Kurti</h3>
+                        <p class="category">Women's Wear</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;" class="animate-on-scroll" data-animation="zoomIn">
+                <a href="#" class="btn btn-primary animate-bounce" onclick="openWhatsApp()">View More on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about">
+        <div class="about-content">
+            <h2 class="font-playfair animate-on-scroll" data-animation="fadeInDown">About Geeta Collections</h2>
+            <p class="animate-on-scroll" data-animation="fadeInLeft">
+                Nestled in the vibrant neighborhood of Mulund, Geeta Collections has been a beacon 
+                of traditional elegance and contemporary fashion for years. Our story began with a 
+                simple vision: to bring the timeless beauty of ethnic wear to the modern wardrobe.
+            </p>
+            <p class="animate-on-scroll" data-animation="fadeInRight">
+                We specialize in carefully curated men's kurtas, women's kurtis, and exquisite 
+                ethnic sets that celebrate the rich heritage of Indian craftsmanship. Each piece 
+                in our collection tells a story of tradition, woven with threads of innovation 
+                and style.
+            </p>
+            <p class="highlight animate-on-scroll" data-animation="scaleIn">
+                Rooted in tradition, made for modern style – that's the Geeta Collections promise.
+            </p>
+            
+            <div class="store-info animate-on-scroll" data-animation="slideInFromBottom">
+                <h3 class="font-playfair">Visit Our Store</h3>
+                <p>
+                    📍 Mulund (W), Mumbai<br/>
+                    Experience our collection in person and let our experts help you find the perfect outfit.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <button class="whatsapp-float" onclick="openWhatsApp()" aria-label="Contact us on WhatsApp">
+        💬
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content animate-on-scroll" data-animation="fadeInUp">
+            <h3 class="font-playfair">Geeta Collections</h3>
+            <p class="tagline">Elegance in Every Thread</p>
+            
+            <div class="footer-info">
+                <p>📍 Mulund (W), Mumbai | 📞 Contact us on WhatsApp for inquiries</p>
+                <p style="font-size: 0.8rem; margin-top: 10px;">© 2024 Geeta Collections. All rights reserved.</p>
+                <div class="designer-credit">
+                    Designed by Vignesh Developers
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Enhanced Scroll Animation Observer - Continuous animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -10% 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                const element = entry.target;
+                const animationType = element.getAttribute('data-animation') || 'fadeInUp';
+                
+                if (entry.isIntersecting) {
+                    // Element is entering viewport - animate in
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                    element.classList.remove('animate-fadeInUp', 'animate-fadeInLeft', 'animate-fadeInRight', 
+                                           'animate-fadeInDown', 'animate-scaleIn', 'animate-rotateIn', 
+                                           'animate-zoomIn', 'animate-flipIn', 'animate-slideInFromBottom');
+                    element.classList.add('animate-' + animationType);
+                } else {
+                    // Element is leaving viewport - reset for next animation
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                    element.classList.remove('animate-fadeInUp', 'animate-fadeInLeft', 'animate-fadeInRight', 
+                                           'animate-fadeInDown', 'animate-scaleIn', 'animate-rotateIn', 
+                                           'animate-zoomIn', 'animate-flipIn', 'animate-slideInFromBottom');
+                    
+                    // Add a small delay before allowing re-animation
+                    setTimeout(() => {
+                        element.style.transition = 'all 0.3s ease';
+                    }, 100);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // WhatsApp Function
+        function openWhatsApp() {
+            const message = "Hi! I'm interested in your collection at Geeta Collections.";
+            const phoneNumber = "919876543210"; // Replace with actual WhatsApp number
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Touch feedback for mobile
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.product-card, .btn').forEach(element => {
+                element.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                element.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                });
+            });
+        }
+
+        // Particle Animation
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 6 + 's';
+            particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            document.getElementById('particles').appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 6000);
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 300);
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const rate = scrolled * -0.3;
+            hero.style.transform = `translateY(${rate}px)`;
+        });
+
+        // Add typing animation to tagline
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing animation after page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const tagline = document.querySelector('.tagline');
+                const originalText = tagline.textContent;
+                typeWriter(tagline, originalText, 80);
+            }, 1500);
+        });
+
+        // Add random animation variations
+        function addRandomAnimations() {
+            const animations = ['fadeInUp', 'fadeInLeft', 'fadeInRight', 'scaleIn', 'rotateIn', 'zoomIn'];
+            const productCards = document.querySelectorAll('.product-card');
+            
+            productCards.forEach((card, index) => {
+                if (!card.getAttribute('data-animation')) {
+                    const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+                    card.setAttribute('data-animation', randomAnimation);
+                }
+            });
+        }
+
+        // Initialize random animations
+        addRandomAnimations();
+
+        // Add continuous floating animation to decorative elements
+        function addFloatingElements() {
+            const decorativeElements = document.querySelectorAll('.hero::before, .hero::after, .decorative-circle');
+            decorativeElements.forEach(element => {
+                element.style.animation += ', float 4s ease-in-out infinite';
+            });
+        }
+
+        // Enhanced scroll-triggered animations with stagger effect
+        function staggerAnimations() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach((element, index) => {
+                element.style.animationDelay = (index * 0.1) + 's';
+            });
+        }
+
+        // Initialize stagger animations
+        window.addEventListener('load', staggerAnimations);
+
+        // Add intersection observer for continuous animations
+        const continuousObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                } else {
+                    entry.target.style.animationPlayState = 'paused';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Observe floating elements for continuous animation
+        document.querySelectorAll('.animate-float, .animate-bounce').forEach(el => {
+            continuousObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
